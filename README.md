@@ -1,6 +1,6 @@
 # Harmonic Change Detection Function (HCDF) library
 
-This library is used to compute HCDF. [Here]() is described the algorithm in detail. As many of the solutions overlap partilly, all the algorithm data computed in the different blocks is saved in out folder in order to not compute same blocks parameterization two times.
+This library is used to compute HCDF. [Here](https://www.aes.org/e-lib/browse.cfm?elib=20945) is described the algorithm in detail. As many of the solutions overlap partilly, all the algorithm data computed in the different blocks is saved in out folder in order to not compute same blocks parameterization two times.
 
 
 ## Installation
