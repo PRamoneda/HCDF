@@ -1,10 +1,21 @@
 import csv
 import json
 
-import config
 import numpy
 
 import pickle
+
+paths = {
+	'datasets': "$HOME/Thesis/datasets",
+	'harmonic_change_temp': "./out/harmonic_change/",
+	'eval_temp': "./out/eval/",
+	'chroma_temp': "./out/chroma/",
+	'tonal_model_temp': "./out/tonal_model/",
+	'gaussian_blur_temp': "./out/gaussian_blur/",
+	'blur_temp': "./out/blur/",
+	'audio_temp': "./out/audio/",
+	'node_in': "in/node1.json"
+}
 
 
 def save_centroids(centroids, name_file):
@@ -89,29 +100,29 @@ def load_binary(name_file):
 
 def get_name_audio(name_file, hpss, sr, codec='.pickle'):
 	hpss_name = 'hpss' if hpss else 'none'
-	return config.paths["audio_temp"] + "audio." + name_file + '.' + hpss_name + '.' + str(sr) + codec
+	return paths["audio_temp"] + "audio." + name_file + '.' + hpss_name + '.' + str(sr) + codec
 
 
 def get_name_chromagram(name_file, hpss, chroma, codec='.pickle'):
 	hpss_name = 'hpss' if hpss else 'none'
-	return config.paths["chroma_temp"] + "chroma." + name_file + '.' + hpss_name + '.' + chroma + codec
+	return paths["chroma_temp"] + "chroma." + name_file + '.' + hpss_name + '.' + chroma + codec
 
 
 def get_name_tonal_model(name_file, hpss, chroma, tonal_model, codec='.pickle'):
 	hpss_name = 'hpss' if hpss else 'none'
-	return config.paths["tonal_model_temp"] + "tonal." + name_file + '.' + hpss_name + '.' + chroma + '.' + tonal_model + codec
+	return paths["tonal_model_temp"] + "tonal." + name_file + '.' + hpss_name + '.' + chroma + '.' + tonal_model + codec
 
 
 def get_name_gaussian_blur(name_file, hpss, chroma, tonal_model, blur, sigma, log_compresion, codec='.pickle'):
 	hpss_name = 'hpss' if hpss else 'none'
-	return config.paths["gaussian_blur_temp"] + "blur." + name_file + '.' + hpss_name + '.' + chroma + '.' + tonal_model + '.' + blur + '.' + 'sigma' + str(sigma) + '.' + log_compresion + codec
+	return paths["gaussian_blur_temp"] + "blur." + name_file + '.' + hpss_name + '.' + chroma + '.' + tonal_model + '.' + blur + '.' + 'sigma' + str(sigma) + '.' + log_compresion + codec
 
 
 def get_name_eval(filename, hpss, tonal_model, chroma, blur, sigma, log_compresion, distance, codec='.json'):
 	hpss_name = 'hpss' if hpss else 'none'
-	return config.paths["eval_temp"] + "eval." + filename + '.' + hpss_name + '.' + chroma + '.' + tonal_model + '.' + blur+ '.' + 'sigma' + str(sigma) + '.' + log_compresion + '.' + distance + codec
+	return paths["eval_temp"] + "eval." + filename + '.' + hpss_name + '.' + chroma + '.' + tonal_model + '.' + blur+ '.' + 'sigma' + str(sigma) + '.' + log_compresion + '.' + distance + codec
 
 
 def get_name_harmonic_change(filename, hpss, tonal_model, chroma, blur, sigma, log_compresion, distance, codec='.pickle'):
 	hpss_name = 'hpss' if hpss else 'none'
-	return config.paths["harmonic_change_temp"] + "hcdf." + filename + '.' + hpss_name + '.' + chroma + '.' + tonal_model + '.' + blur + '.' + 'sigma' + str(sigma) + '.' + log_compresion + '.' + distance + codec
+	return paths["harmonic_change_temp"] + "hcdf." + filename + '.' + hpss_name + '.' + chroma + '.' + tonal_model + '.' + blur + '.' + 'sigma' + str(sigma) + '.' + log_compresion + '.' + distance + codec
