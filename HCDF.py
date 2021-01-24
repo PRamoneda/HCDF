@@ -716,8 +716,8 @@ def main(argv):
 
     """
     absolute_path = "./audio_files/"
-    file = "07_-_Please_Please_Me.wav"
-    # file = argv[2]
+    # file = "07_-_Please_Please_Me.wav"
+    file = argv[2]
     if argv[1] == "f-score":
         print(harmonic_change(absolute_path + file,
                               file,
@@ -741,14 +741,4 @@ def main(argv):
 
 
 if __name__ == '__main__':
-    onset, hcdf, winows_size = harmonic_change('./audio_files/07_-_Please_Please_Me.wav',
-                                               '07_-_Please_Please_Me',
-                                               chroma='stft-44100-2048-4',
-                                               hpss=True,
-                                               tonal_model='TIV2',
-                                               blur='full',
-                                               sigma=17,
-                                               distance='euclidean')
-
-    print("hcdf", hcdf)
-    print("changes of chord", onset)
+    main(sys.argv)

@@ -6,4 +6,4 @@ six==1.12.0
 vamp==1.1.0
 matplotlib
 astropy
-pickle
+pickle-mixin
